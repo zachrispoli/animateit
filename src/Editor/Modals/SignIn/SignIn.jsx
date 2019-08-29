@@ -23,7 +23,7 @@ class SignIn extends Component {
         <div className="row">
           <div className="col-6">
             <div className="signin-left-container">
-              <img className="signin-img" src="/logo.png" alt="ANIMATE IT"/>
+              <img className="signin-img" src="/resources/logo.png" alt="ANIMATE IT"/>
               <p className="signin-text">Log in to get started.</p>
               <ActionButton 
                 className="signin-modal-button"
