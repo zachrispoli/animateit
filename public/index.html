@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.png">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="theme-color" content="#007DF1">
+
+    <meta name="description" content="Create GIFs and video animations easily on your own!">
+    <meta name="image" content="https://aminateit.online/resources/icon-192x192.png">
+    <meta name="author" content="AnimateIt.online">
+    <!-- Schema.org for Google -->
+    <meta itemprop="name" content="ANIMATE IT - Create GIFs and video animations easily on your own!">
+    <meta itemprop="description" content="Online tool to create high-quality animations for free, entirely in the browser.">
+    <meta itemprop="image" content="https://aminateit.online/resources/icon-192x192.png">
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="ANIMATE IT - Create GIFs and video animations easily on your own!">
+    <meta name="twitter:description" content="Online tool to create high-quality animations for free, entirely in the browser.">
+    <meta name="twitter:site" content="@AnimateIt_">
+    <meta name="twitter:image:src" content="https://aminateit.online/resources/icon-192x192.png">
+    <!-- Open Graph general (Facebook, Pinterest & Google+) -->
+    <meta name="og:title" content="ANIMATE IT - Create GIFs and video animations easily on your own!">
+    <meta name="og:description" content="Online tool to create high-quality animations for free, entirely in the browser.">
+    <meta name="og:image" content="https://aminateit.online/resources/icon-192x192.png">
+    <meta name="og:url" content="https://aminateit.online">
+    <meta name="og:site_name" content="ANIMATE IT - Create GIFs and video animations easily on your own!">
+    <meta name="og:type" content="website">
+    <!--
+      manifest.json provides metadata used when your web app is added to the
+      homescreen on Android. See https://developers.google.com/web/fundamentals/web-app-manifest/
+    -->
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json">
+
+    <!-- Wick Editor Dependencies: -->
+    <!-- Wick Engine -->
+    <script src="%PUBLIC_URL%/corelibs/wick-engine/wickengine.js"></script>
+    <!-- GIF.js -->
+    <script src="%PUBLIC_URL%/corelibs/gif/gif.js"></script>
+    <!-- preload.js -->
+    <script src="%PUBLIC_URL%/corelibs/preload/preloadjs.min.js"></script>
+    <!-- Preloader animation CSS -->
+    <link href="%PUBLIC_URL%/preloader-animation.css" rel="stylesheet" type="text/css">
+    <!-- Wait overlay CSS -->
+    <link href="%PUBLIC_URL%/wait-overlay.css" rel="stylesheet" type="text/css">
+
+    <!--
+      Notice the use of %PUBLIC_URL% in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
+
+      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+    <title>ANIMATE IT - Create GIFs and video animations easily on your own!</title>
+    <style>
+      html, body {
+        width: 100%;
+        height: 100%;
+        margin: 0px;
+      }
+    </style>
+  </head>
+  <body>
+    <noscript>
+      You need to enable JavaScript to run this app.
+    </noscript>
+    <div id="root"></div>
+    <div id="preloader">
+      <div class="flashy">
+        <img className="site-logo" src="/resources/logo.png" alt="ANIMATE IT"></img>
+      </div>
+      <div class="text">
+        <svg viewBox="0 0 200 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+            <style>
+                .small {
+                    font: bold 26px sans-serif;
+                    fill: #007df1;
+                }
+            </style>
+            <text x="44" y="22" class="small">Loading...</text>
+        </svg>
+      </div>
+    </div>
+    <div id="wait-overlay">
+      Please wait...
+    </div>
+  </body>
+</html>

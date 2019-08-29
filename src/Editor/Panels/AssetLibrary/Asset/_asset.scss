@@ -1,0 +1,69 @@
+/*
+ * Copyright 2018 WICKLETS LLC
+ *
+ * This file is part of Wick Editor.
+ *
+ * Wick Editor is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * Wick Editor is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with Wick Editor.  If not, see <https://www.gnu.org/licenses/>.
+ */
+
+@import 'Editor/_wickbrand.scss';
+
+$asset-height: 24px;
+$asset-margin: 4px;
+
+.asset-item {
+  transition: .2s;
+  width: calc(100% - 2 * #{$asset-margin});
+  height: $asset-height;
+  line-height: $asset-height;
+  background-color: $editor-secondary;
+  color: $editor-secondary-text;
+  margin-top: $asset-margin;
+  margin-left: $asset-margin;
+  margin-right: $asset-margin;
+  padding-left: $asset-margin;
+  padding-right: $asset-margin;
+  vertical-align: center;
+  border-radius: $interface-roundness-primary;
+  overflow: hidden;
+  box-sizing: border-box;
+
+  display: flex;
+  align-items: center;
+}
+
+.asset-item:hover {
+  background-color: $editor-primary;
+  color: $editor-primary-property-text;
+  cursor: grab;
+}
+
+.asset-icon {
+  width: calc(#{$asset-height} * .8);
+  height: calc(#{$asset-height} * .8);
+}
+
+.asset-name-text {
+  margin-left: 4px;
+  white-space: nowrap;
+  overflow: scroll;
+  height: 100%;
+  overflow: hidden;
+}
+
+.asset-item.asset-selected {
+  transition: .2s;
+  background-color: $editor-primary;
+  color: $editor-primary-property-text;
+}

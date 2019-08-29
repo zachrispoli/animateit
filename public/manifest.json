@@ -1,0 +1,16 @@
+{
+  "short_name": "ANIMATE IT",
+  "name": "ANIMATE IT",
+  "description": "Create GIFs and video animations easily on your own!",
+  "icons": [
+    {
+      "src": "https://animateit.online/resources/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ],
+  "start_url": "https://animateit.online/manifest.json",
+  "display": "standalone",
+  "theme_color": "#007DF1",
+  "background_color": "#F3F3F3"
+}

@@ -1,0 +1,227 @@
+/*
+ * Copyright 2018 WICKLETS LLC
+ *
+ * This file is part of Wick Editor.
+ *
+ * Wick Editor is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * Wick Editor is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with Wick Editor.  If not, see <https://www.gnu.org/licenses/>.
+ */
+
+@import './_wickbrand.scss';
+
+$menu-bar-height: 40px;
+$toolbox-height: 40px;
+
+body {
+  overflow: hidden;
+  text-rendering: optimizeLegibility;
+}
+
+#toolbox-container {
+  height: $toolbox-height;
+}
+
+#editor-canvas-timeline-panel {
+  height: calc(100% - #{$toolbox-height});
+}
+
+#editor {
+  width: 100%;
+  height: 100%;
+  background-color: red;
+}
+
+#menu-bar-container {
+  width: 100%;
+  height: $menu-bar-height;
+  background-color: green;
+}
+
+#editor-body {
+  width: 100%;
+  height: calc(100% - #{$menu-bar-height});
+  background-color: blue;
+  overflow: hidden;
+}
+
+#flexible-container {
+  height: calc(100% - #{$menu-bar-height});
+  width: 100%;
+  background-color: #AAA;
+  display: inline-block;
+  position: absolute;
+  top: #{$menu-bar-height};
+}
+
+.center-container {
+  background-color: #ffaabb;
+}
+
+.right-container {
+  background-color: #aabbcc;
+}
+
+.right-reflex-container {
+  height: 100%;
+  background-color: #aabbcc;
+}
+
+// Toasts
+
+.Toastify__toast-container--top-right {
+  top: 40px;
+  right: 1em;
+}
+
+.info-toast-background {
+  background-color: $editor-modal-gray;
+}
+
+.error-toast-background {
+  background-color: $wick-red-dark;
+}
+
+.warning-toast-background {
+  background-color: $wick-yellow-dark;
+}
+
+.success-toast-background {
+  background-color: $wick-green-dark;
+}
+
+
+/* Basic re-flex panel/splitter styling */
+
+.reflex-container {
+  justify-content: flex-start;
+  /* align items in Main Axis */
+  align-items: stretch;
+  /* align items in Cross Axis */
+  align-content: stretch;
+  /* OLD - iOS 6-, Safari 3.1-6 */
+  /* OLD - Firefox 19- (buggy but mostly works) */
+  /* TWEENER - IE 10 */
+  /* NEW - Chrome */
+  display: flex;
+  position: relative;
+  height: 100%;
+  width: 100%; }
+
+.reflex-container.horizontal {
+  flex-direction: column; }
+
+.reflex-container.vertical {
+  flex-direction: row; }
+
+.reflex-container > .reflex-element {
+  position: relative;
+  overflow: auto;
+  height: 100%;
+  width: 100%; }
+
+.reflex-container.reflex-resizing > .reflex-element {
+  pointer-events: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none; }
+
+.reflex-container > .reflex-element > .reflex-size-aware {
+  height: 100%;
+  width: 100%; }
+
+.reflex-container > .reflex-splitter {
+  background-color: $splitter-color;
+  z-index: 0; }
+
+.reflex-container > .reflex-splitter.active,
+.reflex-container > .reflex-splitter:hover {
+  background-color: $splitter-highlight-color;
+  transition: all 1s ease; }
+
+.horizontal > .reflex-splitter {
+  border-bottom: $splitter-size solid $splitter-color !important;
+  border-top: $splitter-size solid $splitter-color !important;
+  cursor: row-resize;
+  width: 100%;
+  height: 2px; }
+
+.reflex-element.horizontal .reflex-handle {
+  cursor: row-resize;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none; }
+
+.reflex-container.horizontal > .reflex-splitter:hover,
+.reflex-container.horizontal > .reflex-splitter.active {
+  border-bottom: $splitter-size solid $splitter-highlight-color !important;
+  border-top: $splitter-size solid $splitter-highlight-color !important; }
+
+.reflex-container.vertical > .reflex-splitter {
+  border-right: $splitter-size solid $splitter-color !important;
+  border-left: $splitter-size solid $splitter-color !important;
+  cursor: col-resize;
+  height: 100%;
+  width: 2px; }
+
+.reflex-element.vertical .reflex-handle {
+  cursor: col-resize;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none; }
+
+.reflex-container.vertical > .reflex-splitter:hover,
+.reflex-container.vertical > .reflex-splitter.active {
+  border-right: $splitter-size solid $splitter-highlight-color !important;
+  border-left: $splitter-size solid $splitter-highlight-color !important; }
+
+.reflex-container > .reflex-splitter.reflex-thin {
+  box-sizing: border-box;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding;
+  background-clip: padding-box;
+  opacity: 0.2;
+  z-index: 0; }
+
+.reflex-container > .reflex-splitter.reflex-thin.active
+.reflex-container > .reflex-splitter.reflex-thin:hover {
+  transition: all 1.5s ease;
+  opacity: 0.5; }
+
+.reflex-container.horizontal > .reflex-splitter.reflex-thin {
+  border-bottom: $splitter-size solid rgba(255, 255, 255, 0) !important;
+  border-top: $splitter-size solid rgba(255, 255, 255, 0) !important;
+  height: 17px !important;
+  cursor: row-resize;
+  margin: -$splitter-size 0;
+  width: 100%; }
+
+.reflex-container.horizontal > .reflex-splitter.reflex-thin.active,
+.reflex-container.horizontal > .reflex-splitter.reflex-thin:hover {
+  border-bottom: $splitter-size solid $splitter-highlight-color !important;
+  border-top: $splitter-size solid $splitter-highlight-color !important; }
+
+.reflex-container.vertical > .reflex-splitter.reflex-thin {
+  border-right: $splitter-size solid rgba(255, 255, 255, 0) !important;
+  border-left: $splitter-size solid rgba(255, 255, 255, 0) !important;
+  width: 17px !important;
+  cursor: col-resize;
+  margin: 0 -$splitter-size;
+  height: 100%; }
+
+.reflex-container.vertical > .reflex-splitter.reflex-thin.active,
+.reflex-container.vertical > .reflex-splitter.reflex-thin:hover {
+  border-right: $splitter-size solid $splitter-highlight-color !important;
+  border-left: $splitter-size solid $splitter-highlight-color !important; }
