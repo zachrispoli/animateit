@@ -25,8 +25,8 @@ export default class Site extends Component {
             </div>
             <div className="site-check-it-out">
               <div className="site-button" onClick={() => {window.location = "/editor"}}>
-                CHECK IT OUT
-                <img src="/resources/arrow-left.svg" alt="CHECK IT OUT" />
+                GET STARTED
+                <img src="/resources/arrow-left.svg" alt="GET STARTED" />
               </div>
             </div>
           </div>
